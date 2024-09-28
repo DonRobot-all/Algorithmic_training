@@ -7,12 +7,14 @@
 """
 
 numbers = list(map(int, input().split()))
-answer = 0
-for idx in range(0, len(numbers)):
-    current_number = idx
-    while numbers[current_number] != -1:
-        numbers[current_number], current_number = -1, numbers[current_number] - 1
-        if numbers[current_number] == -1:
-            answer += 1
+def task(numbers):
+    answer = 0
+    for idx in range(0, len(numbers)):
+        number = idx
+        while numbers[number] != -1:
+            numbers[number], number = -1, numbers[number] - 1
+            if numbers[number] == -1:
+                answer += 1
+    return answer
 
-print(answer)
+print(task(numbers))

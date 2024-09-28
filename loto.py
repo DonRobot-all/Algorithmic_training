@@ -7,3 +7,8 @@ print(result)
 
 # b * (b - 1) * (b - 2)
 # 90 * 89 * 88
+set().difference() - Георгий
+dict().update() - Георгий
+str().format_map() - Кирилл М.
+str().casefold() - Кирилл М.
+  
