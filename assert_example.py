@@ -15,3 +15,9 @@ def avg(ranks):
 
 ranks = []
 print("Среднее значение:", avg(ranks))
+
+
+def task():
+    ...
+
+assert task(4, [1, 2, 3, 4]) == 2, task(4, [1, 2, 3, 4])
