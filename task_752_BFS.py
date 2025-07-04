@@ -6,18 +6,14 @@ class Solution:
         if "0000" in deadends:
             return -1
         
-        
         queue = deque([('0000', 0)]) 
         visited = set('0000')
-        
    
         while queue:
             current_combination, moves = queue.popleft()
             
-            
             if current_combination == target:
                 return moves
-            
             
             for i in range(4):
                 for delta in [-1, 1]:
@@ -33,4 +29,4 @@ class Solution:
         return -1
     
 a = Solution()
-a.openLock(["0201","0101","0102","1212","2002"], "0202")
+print(a.openLock(["0201","0101","0102","1212","2002"], "0202"))
