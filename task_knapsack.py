@@ -6,18 +6,16 @@ items = [
     ("iphone", 1, 2000)
 ]
 
-capacity = 10  # вместимость рюкзака (в кг)
+capacity = 4  # вместимость рюкзака (в кг)
 
 # --- Жадный алгоритм ---
 def greedy_knapsack(items, capacity):
     # сортируем предметы по "ценность / вес" (от большего к меньшему)
     items_sorted = sorted(items, key=lambda x: x[2] / x[1], reverse=True)
-
     total_value = 0   # общая ценность предметов в рюкзаке
     total_weight = 0  # текущий вес рюкзака
     chosen = []       # список выбранных предметов
 
-    # пробегаем по отсортированным предметам
     for name, weight, value in items_sorted:
         # если вещь помещается в рюкзак, берём её
         if total_weight + weight <= capacity:
@@ -52,6 +50,7 @@ def dp_knapsack(items, capacity):
     chosen = []
     w = capacity
     for i in range(n, 0, -1):
+        print(dp[i][w], dp[i - 1][w])
         # если значение изменилось, значит, предмет был взят
         if dp[i][w] != dp[i - 1][w]:
             name, weight, value = items[i - 1]
@@ -65,3 +64,27 @@ dp_result = dp_knapsack(items, capacity)
 
 print("Жадный алгоритм:", greedy_result)
 print("Динамическое программирование:", dp_result)
+
+
+# def knapsack(weights, values, W):
+#     n = len(weights)
+#     # dp[i][w] = макс. ценность при использовании первых i предметов и вместимости w
+#     dp = [[0] * (W + 1) for _ in range(n + 1)]
+#     for i in range(1, n + 1):
+#         for w in range(W + 1):
+#             if weights[i-1] <= w:
+#                 # либо берем предмет i-1, либо нет
+#                 dp[i][w] = max(dp[i-1][w],
+#                                dp[i-1][w - weights[i-1]] + values[i-1])
+#             else:
+#                 # не можем взять предмет i-1
+#                 dp[i][w] = dp[i-1][w]
+#             print(dp[i])
+
+#     return dp[n][W]  # максимальная ценность
+
+# weights = [2, 3, 4, 5]   # веса предметов
+# values = [3, 4, 5, 6]    # ценности предметов
+# W = 5                    # вместимость рюкзака
+
+# print(knapsack(weights, values, W))  # вывод: 7
