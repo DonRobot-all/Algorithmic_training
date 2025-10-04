@@ -88,3 +88,17 @@ print("Динамическое программирование:", dp_result)
 # W = 5                    # вместимость рюкзака
 
 # print(knapsack(weights, values, W))  # вывод: 7
+
+items = [
+    ("Золото", 10, 600),
+    ("Серебро", 20, 1000),
+    ("Бронза", 30, 900),
+]
+W = 25
+
+max_value, chosen_items = fractional_knapsack(items, W)
+
+print("Максимальная ценность:", max_value)
+print("Выбранные предметы:")
+for name, weight, value in chosen_items:
+    print(f"{name}: взято {weight} единиц, ценность {value}")
