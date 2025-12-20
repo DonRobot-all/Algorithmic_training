@@ -20,7 +20,6 @@ class Solution:
         trie = Trie()
         for word in words:
             trie.insert(word)
-
         self.result = set()
         self.rows, self.cols = len(board), len(board[0])
         self.visited = set()
@@ -49,6 +48,7 @@ class Solution:
         return list(self.result)
     
 
-board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]]
-words = ["oath","pea","eat","rain"]
+# board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]]
+board = [['a', 'b']]
+words = ["ab"]
 print(Solution().findWords(board, words))

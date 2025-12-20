@@ -28,6 +28,7 @@ class Solution:
         visited = set()
         result = []
         def dfs(x,y,node,path):
+            print(node)
             if node.is_end_of_word == True:
                 result.append(path)
                 node.is_end_of_word = False
@@ -54,7 +55,9 @@ class Solution:
 
 # obj = Trienode()
 # obj.bor([["o","a","a","n"],["e","t","a","e"]])
+board = [['a', 'b']]
+words = ["ab"]
 obj2 = Solution()
-obj2.findWords([["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]],["oath","pea","eat","rain"])
+obj2.findWords(board, words)
 print(obj2)
 # print(obj)
