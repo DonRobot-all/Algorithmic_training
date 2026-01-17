@@ -46,7 +46,7 @@ def autocomplete(root, prefix):
 
 words = ["cat", "car", "cartoon", "carbon", "dog", "door"]
 trie = build_trie(words)
-
+print(trie)
 print(autocomplete(trie, "ca"))   # ['cat', 'car', 'cartoon', 'carbon']
 print(autocomplete(trie, "do"))   # ['dog', 'door']
 print(autocomplete(trie, "z"))    # []
